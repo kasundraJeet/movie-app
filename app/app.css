@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'satoshi-regular';
+    src: url('../public/fonts/Satoshi-Regular.woff2') format('woff2'),
+         url('../public/fonts/Satoshi-Regular.woff') format('woff'),
+         url('../public/fonts/satoshi-regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+    font-family: 'satoshi-regular';
+}
