@@ -2,7 +2,7 @@
 export default function Home() {
   return (
    <main>
-hii this is custom font famliuy 
+    <p>this is movie app using the movie Database</p>
    </main>
   );
 }

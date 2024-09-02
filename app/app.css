@@ -1,18 +1,32 @@
 @font-face {
-    font-family: 'satoshi-regular';
-    src: url('../public/fonts/Satoshi-Regular.woff2') format('woff2'),
-         url('../public/fonts/Satoshi-Regular.woff') format('woff'),
-         url('../public/fonts/satoshi-regular.ttf') format('truetype');
-    font-weight: 400;
-    font-display: swap;
-    font-style: normal;
-  }
+  font-family: "satoshi-regular";
+  src: url("../public/fonts/Satoshi-Regular.woff2") format("woff2"),
+    url("../public/fonts/Satoshi-Regular.woff") format("woff"),
+    url("../public/fonts/satoshi-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-*{
-    font-family: 'satoshi-regular';
+* {
+  font-family: "satoshi-regular";
 }
+
+/* Main Color :- #F2613F */
+
+/* Success :-  #4CAF50 */
+/* Warning :-  #FFC107 */
+/* Error :-  #F44336 */
+
+/* Primary Text :- #FFFFFF */
+/* Secondary Text :- #B3B3B3 */
+
+/* Dark Background :- #1A1A1A */
+/* Accent Color 1 :- #FF9B70  */
+/* Accent Color 2 :- #FFD4C2  */
+/* Neutral Light: :- #EDEDED  */
+/* Neutral Dark: :- #333333  */
