@@ -31,7 +31,7 @@
 }
 
 body {
-  @apply w-full bg-deepSpace;
+  @apply w-full bg-deepSpace text-paleGray;
 }
 
 .container {

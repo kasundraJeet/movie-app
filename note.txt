@@ -1,0 +1,7 @@
+** person structure
+
+|| person detail
+|| person movie
+|| person birthDate
+|| person best movie
+|| person infomation infomation
