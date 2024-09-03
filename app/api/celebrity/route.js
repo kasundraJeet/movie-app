@@ -1,9 +1,7 @@
 
-import { APIFetcher } from "~/helper/APIFetcher";
+import { ApiRequest } from "~/helper/ApiRequest";
 
 export async function GET() {
-  let data = await APIFetcher('https://api.themoviedb.org/3/person/popular?language=en-US&page=1');
-  console.log("data ==>" , data);
-
+  let data = await ApiRequest('https://api.themoviedb.org/3/person/popular?language=en-US&page=1');
   return Response.json(data);
 }

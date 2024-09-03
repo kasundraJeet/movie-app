@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_KEY = process.env.API_TOKEN;
 
-export const APIFetcher = async (url) => {
+export const ApiRequest = async (url) => {
   const headers = {
     accept: "application/json",
     Authorization: `Bearer ${API_KEY}`,
