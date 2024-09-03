@@ -16,17 +16,24 @@
   font-family: "satoshi-regular";
 }
 
-/* Main Color :- #F2613F */
+:root {
+  --vibrant-coral: #f2613f;
+  --lush-green: #4caf50;
+  --golden-yellow: #ffc107;
+  --fiery-red: #f44336;
+  --light-text: #ffffff;
+  --subtle-text: #b3b3b3;
+  --deep-space: #1a1a1a;
+  --peach-blush: #ff9b70;
+  --soft-peach: #ffd4c2;
+  --pale-gray: #ededed;
+  --charcoal-gray: #333333;
+}
 
-/* Success :-  #4CAF50 */
-/* Warning :-  #FFC107 */
-/* Error :-  #F44336 */
+body {
+  @apply w-full bg-deepSpace;
+}
 
-/* Primary Text :- #FFFFFF */
-/* Secondary Text :- #B3B3B3 */
-
-/* Dark Background :- #1A1A1A */
-/* Accent Color 1 :- #FF9B70  */
-/* Accent Color 2 :- #FFD4C2  */
-/* Neutral Light: :- #EDEDED  */
-/* Neutral Dark: :- #333333  */
+.container {
+  @apply w-full px-3 md:px-2 max-w-7xl max-[1920px]:max-w-[1620px] mx-auto;
+}
