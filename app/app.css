@@ -24,7 +24,7 @@
   --light-text: #ffffff;
   --subtle-text: #b3b3b3;
   --deep-space: #1a1a1a;
-  --peach-blush: #ff9b70;
+  --peach-blush: #f07642;
   --soft-peach: #ffd4c2;
   --pale-gray: #ededed;
   --charcoal-gray: #333333;
@@ -35,5 +35,13 @@ body {
 }
 
 .container {
-  @apply w-full px-3 md:px-2 max-w-7xl max-[1920px]:max-w-[1620px] mx-auto;
+  @apply w-full px-3 md:px-2 max-w-7xl min-[1920px]:max-w-[1620px] mx-auto;
+}
+
+.footer{
+  @apply w-full divide-y divide-paleGray bg-peachBlush
+}
+
+.celebrity--card{
+  @apply w-full border border-solid border-vibrantCoral
 }
