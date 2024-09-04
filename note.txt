@@ -5,3 +5,4 @@
 || person birthDate
 || person best movie
 || person infomation infomation
+|| person Coutry, state , city

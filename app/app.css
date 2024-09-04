@@ -45,3 +45,11 @@ body {
 .celebrity--card{
   @apply w-full border border-solid border-vibrantCoral
 }
+
+.celebrity--card .image-wrapper{
+@apply relative w-full pt-96 bg-transparent
+}
+
+.celebrity--card .image-wrapper image{
+@apply border-none object-cover
+}

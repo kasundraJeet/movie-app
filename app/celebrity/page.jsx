@@ -1,4 +1,5 @@
 import { ServerApiHandler } from "~/helper/ServerApiHandler";
+import { Image } from "@/components/custom";
 
 export default async function Celebrity() {
   const res = await ServerApiHandler(`/api/celebrity`);
@@ -14,11 +15,20 @@ export default async function Celebrity() {
         <ul className="grid grid-cols-4 gap-4">
           {data.results.map((celebrity) => (
             <li className="celebrity--card" key={celebrity.id}>
-              <div>
-                
+              <div className="image-wrapper">
+                <Image
+                  src={`/t/p/w500${celebrity.profile_path}`}
+                  alt={`${celebrity.name} Image`}
+                />
               </div>
               <div>
-                <h2>{celebrity.name}</h2>
+                <h2>
+                  {celebrity.name}{" "}
+                  {celebrity.name.toLowerCase() !==
+                  celebrity.original_name.toLowerCase()
+                    ? `(${celebrity.original_name})`
+                    : null}{" "}
+                </h2>
                 <p>{celebrity.known_for_department}</p>
               </div>
             </li>
