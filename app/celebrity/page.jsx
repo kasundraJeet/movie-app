@@ -1,5 +1,6 @@
 import { ServerApiHandler } from "~/helper/ServerApiHandler";
-import { Image } from "@/components/custom";
+import { Image , Pagination } from "@/components/custom";
+
 
 export default async function Celebrity() {
   let data;
@@ -7,7 +8,6 @@ export default async function Celebrity() {
   try {
     const res = await ServerApiHandler(`/api/celebrity`);
     data = await res;
-    console.log("data", data);
   } catch (error) {
     return <p>Failed to load celebrities. Please try again later.</p>;
   }
@@ -19,10 +19,13 @@ export default async function Celebrity() {
   return (
     <section>
       <h1>Popular Celebrities</h1>
-      <section className="container py-8">
+      <section className="container py-8 space-y-8">
         <ul className="grid grid-cols-4 gap-4">
           {data.results.map((celebrity) => (
-            <li className="celebrity--card" key={celebrity.id}>
+            <li
+              className="celebrity--card"
+              key={celebrity.id}
+            >
               <div className="image-wrapper">
                 <Image
                   src={
@@ -40,7 +43,7 @@ export default async function Celebrity() {
                     celebrity.original_name.toLowerCase() &&
                     ` (${celebrity.original_name})`}
                 </h2>
-                <p>
+                <p className="">
                   {celebrity.known_for.map((known, index) => (
                     <span key={known.id}>
                       {known.media_type === "tv" ? known.name : known.title}
@@ -52,6 +55,9 @@ export default async function Celebrity() {
             </li>
           ))}
         </ul>
+        <div className="flex items-center justify-center">
+            <Pagination />
+        </div>
       </section>
     </section>
   );

@@ -38,22 +38,45 @@ body {
   @apply w-full px-3 md:px-2 max-w-7xl min-[1920px]:max-w-[1620px] mx-auto;
 }
 
-.footer{
-  @apply w-full divide-y divide-paleGray bg-peachBlush
+.footer {
+  @apply w-full divide-y divide-paleGray bg-peachBlush;
 }
 
-.celebrity--card{
-  @apply w-full border border-solid border-vibrantCoral
+.celebrity--card {
+  @apply w-full border border-solid border-vibrantCoral;
 }
 
-.celebrity--card .image-wrapper{
-  @apply relative w-full pt-96 bg-transparent
+.celebrity--card .image-wrapper {
+  @apply relative w-full pt-96 bg-transparent;
 }
 
-.celebrity--card .image-wrapper image{
-  @apply border-none object-cover
+.celebrity--card .image-wrapper image {
+  @apply border-none object-cover;
 }
 
-.celebrity--card .content{
-@apply p-4
+.celebrity--card .content {
+  @apply p-4;
+}
+
+.pagination {
+  @apply flex items-stretch gap-6;
+}
+
+.pagination .arrow-btn,
+.pagination-list button  {
+  @apply min-w-7 min-h-7 max-w-7 max-h-7 border border-solid border-vibrantCoral flex items-center justify-center;
+}
+
+.pagination-list {
+  @apply flex items-stretch;
+}
+
+.pagination-list button {
+  @apply min-w-7 min-h-7 max-h-7;
+}
+
+.pagination .arrow-btn:hover,
+.pagination-list button:hover,
+.pagination-list button.active{
+  @apply bg-peachBlush
 }
