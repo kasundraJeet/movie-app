@@ -7,7 +7,6 @@ export const ServerApiHandler = async (url) => {
     const response = await axios.get(`${NEXT_PUBLIC_BASE_URL}/${url}`);
     return response.data;
   } catch (error) {
-    console.error(e);
     throw error;
   }
 };

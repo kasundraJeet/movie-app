@@ -14,7 +14,6 @@ export const ApiRequest = async (url) => {
     });
     return response.data;
   } catch (error) {
-    console.error(`API Request failed: ${error.response?.status} ${error.response?.statusText || error.message}`);
     throw error;
   }
 };

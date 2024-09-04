@@ -6,3 +6,18 @@
 || person best movie
 || person infomation infomation
 || person Coutry, state , city
+
+person data structure like this
+
+{
+  adult: false;
+  gender: 2;
+  id: 16483;
+  known_for_department: "Acting";
+  name: "Sylvester Stallone";
+  original_name: "Sylvester Stallone";
+  popularity: 104.941;
+  profile_path: "/Aprx4oBGwdTPHqlfcYbjWlCK3aI.jpg";
+  known_for: [Array];
+}
+
