@@ -1,17 +1,11 @@
-"use client";
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
-export default function Pagination({ currentPage, totalPage, onPageChange }) {
+export default function Pagination({ currentPage, totalPage, query , path }) {
   const pagesToShow = 3;
   const startPages = [1, 2, 3, 4];
   const endPages = [totalPage - 1, totalPage];
 
-  const goToPage = (page) => {
-    if (page >= 1 && page <= totalPage) {
-      onPageChange(page);
-    }
-  };
 
   const generateMiddlePages = () => {
     const middlePages = [];
@@ -34,25 +28,22 @@ export default function Pagination({ currentPage, totalPage, onPageChange }) {
   return (
     <ul className="pagination">
       <li>
-        <button
+        <Link href={`${path}?${query}=${currentPage - 1}`}
           className="arrow-btn"
-          onClick={() => goToPage(currentPage - 1)}
           disabled={currentPage === 1}
         >
           <ChevronLeft size={18} />
-        </button>
+        </Link>
       </li>
-
       <li>
         <ul className="pagination-list">
           {startPages.map((page) => (
             <li key={page}>
-              <button
+              <Link href={`${path}?${query}=${page}`}
                 className={`page-btn ${page === currentPage ? "active" : ""}`}
-                onClick={() => goToPage(page)}
               >
                 {page}
-              </button>
+              </Link>
             </li>
           ))}
 
@@ -64,12 +55,11 @@ export default function Pagination({ currentPage, totalPage, onPageChange }) {
 
           {middlePages.map((page) => (
             <li key={page}>
-              <button
+              <Link href={`${path}?${query}=${page}`}
                 className={`page-btn ${page === currentPage ? "active" : ""}`}
-                onClick={() => goToPage(page)}
               >
                 {page}
-              </button>
+              </Link>
             </li>
           ))}
 
@@ -81,25 +71,23 @@ export default function Pagination({ currentPage, totalPage, onPageChange }) {
 
           {endPages.map((page) => (
             <li key={page}>
-              <button
+              <Link href={`${path}?${query}=${page}`}
                 className={`page-btn ${page === currentPage ? "active" : ""}`}
-                onClick={() => goToPage(page)}
               >
                 {page}
-              </button>
+              </Link>
             </li>
           ))}
         </ul>
       </li>
 
       <li>
-        <button
+        <Link href={`${path}?${query}=${currentPage + 1}`}
           className="arrow-btn"
-          onClick={() => goToPage(currentPage + 1)}
           disabled={currentPage === totalPage}
         >
           <ChevronRight size={18} />
-        </button>
+        </Link>
       </li>
     </ul>
   );

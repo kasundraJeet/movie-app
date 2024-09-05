@@ -5,7 +5,17 @@ const Footer = () => {
     <footer className="w-full footer">
       <div className="py-3.5">
         <div className="container">
-
+            <ul className="space-y-1">
+              <li>
+                <Link href="/celebrity" className="underline">Celebrity</Link>
+              </li>
+              <li>
+                <Link href="/celebrity/male-celebrity" className="underline">Male Celebrity</Link>
+              </li>
+              <li>
+                <Link href="/celebrity/female-celebrity" className="underline">Female Celebrity</Link>
+              </li>
+            </ul>
         </div>
       </div>
       <div className="py-3">

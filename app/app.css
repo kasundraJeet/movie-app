@@ -63,12 +63,13 @@ body {
 }
 
 .pagination .arrow-btn,
-.pagination-list button  {
+.pagination-list button ,
+.pagination-list a {
   @apply min-w-7 min-h-7 max-w-7 max-h-7 border border-solid border-vibrantCoral flex items-center justify-center;
 }
 
 .pagination .arrow-btn:disabled,
-.pagination-list button:disabled{
+.pagination-list a:disabled{
   @apply opacity-50 cursor-no-drop
 }
 
@@ -76,15 +77,15 @@ body {
   @apply flex items-stretch;
 }
 
-.pagination-list button {
+.pagination-list a{
   @apply min-w-7 min-h-7 max-h-7 max-w-max px-2 border-r-0;
 }
-.pagination-list li:nth-last-child(1) button{
+.pagination-list li:nth-last-child(1) a{
   @apply  border-r
 }
 
 .pagination .arrow-btn:hover,
-.pagination-list button:hover,
-.pagination-list button.active{
+.pagination-list a:hover,
+.pagination-list a.active{
   @apply bg-peachBlush
 }

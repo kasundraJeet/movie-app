@@ -1,8 +1,12 @@
 import { ApiRequest } from "~/helper/ApiRequest";
 
+const API = process.env.API_DOMAIN;
+
+
 export async function GET(req, { params }) {
   const { category } = params;
-  let url = `https://api.themoviedb.org/3/person/popular?language=en-US&page=4`;
+
+  let url = `${API}/person/popular?language=en-US&page=1`;
 
   let data = await ApiRequest(url);
 

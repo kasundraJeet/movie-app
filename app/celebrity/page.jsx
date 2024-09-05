@@ -2,15 +2,18 @@ import { ServerApiHandler } from "~/helper/ServerApiHandler";
 import { Pagination } from "@/components/custom";
 import CelebrityCard from "./components/CelebrityCard";
 
-export default async function Celebrity() {
+export default async function Celebrity({ searchParams }) {
   let data;
+  let current_page;
+  let total_pages;
 
   try {
-    const res = await ServerApiHandler(`/api/celebrity`);
+    const res = await ServerApiHandler(
+      `/api/celebrity?page=${searchParams.page || 1}`
+    );
     data = await res;
-    var total_pages = data.total_pages;
-    var current_page = data.page;
-    var total_results = data.total_results;
+    total_pages = data.total_pages;
+    current_page = data.page;
   } catch (error) {
     return <p>Failed to load celebrities. Please try again later.</p>;
   }
@@ -29,7 +32,7 @@ export default async function Celebrity() {
           ))}
         </ul>
         <div className="flex items-center justify-center">
-          <Pagination currentPage={current_page} totalPage={total_pages} />
+          <Pagination currentPage={current_page} totalPage={total_pages} query="page" path="/celebrity" />
         </div>
       </section>
     </section>
