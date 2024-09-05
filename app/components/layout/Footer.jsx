@@ -15,6 +15,30 @@ const Footer = () => {
               <li>
                 <Link href="/celebrity/female-celebrity" className="underline">Female Celebrity</Link>
               </li>
+              <li>
+                <Link href="/celebrity/indian-male-celebrity" className="underline">indian-male-celebrity</Link>
+              </li>
+              <li>
+                <Link href="/celebrity/indian-female-celebrity" className="underline">indian-female-celebrity</Link>
+              </li>
+              <li>
+                <Link href="/celebrity/month-birthday" className="underline">month-birthday</Link>
+              </li>
+              <li>
+                <Link href="/celebrity/today-birthday" className="underline">today-birthday</Link>
+              </li>
+              <li>
+                <Link href="/celebrity/young-celebrity" className="underline">young-celebrity</Link>
+              </li>
+              <li>
+                <Link href="/celebrity/oldest-celebrity" className="underline">oldest-celebrity</Link>
+              </li>
+              <li>
+                <Link href="/celebrity/bollywood-celebrity" className="underline">bollywood-celebrity</Link>
+              </li>
+              <li>
+                <Link href="/celebrity/hollywood-celebrity" className="underline">hollywood-celebrity</Link>
+              </li>
             </ul>
         </div>
       </div>
