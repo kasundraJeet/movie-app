@@ -1,16 +1,16 @@
 import { ServerApiHandler } from "~/helper/ServerApiHandler";
 import { Pagination } from "@/components/custom";
-import CelebrityCard from "./components/CelebrityCard";
+import CelebrityCard from "../components/CelebrityCard";
 
-export default async function Celebrity() {
+export default async function CelebrityCategory({ params }) {
+  const { category } = params;
   let data;
 
   try {
-    const res = await ServerApiHandler(`/api/celebrity`);
+    const res = await ServerApiHandler(`/api/celebrity/${category}`);
     data = await res;
     var total_pages = data.total_pages;
     var current_page = data.page;
-    var total_results = data.total_results;
   } catch (error) {
     return <p>Failed to load celebrities. Please try again later.</p>;
   }
@@ -21,7 +21,7 @@ export default async function Celebrity() {
 
   return (
     <section>
-      <h1>Popular Celebrities</h1>
+      <h1>{category.replace("-", " ").toUpperCase()}</h1>
       <section className="container py-8 space-y-8">
         <ul className="grid grid-cols-4 gap-4">
           {data.results.map((celebrity) => (
