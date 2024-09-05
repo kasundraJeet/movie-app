@@ -5,8 +5,10 @@ const API = process.env.API_DOMAIN;
 
 export async function GET(req, { params }) {
   const { category } = params;
+  const { searchParams } = new URL(req.url);
+  const page = searchParams.get('page') || 1;
 
-  let url = `${API}/person/popular?language=en-US&page=1`;
+  let url = `${API}/person/popular?language=en-US&page=${page}`;
 
   let data = await ApiRequest(url);
 

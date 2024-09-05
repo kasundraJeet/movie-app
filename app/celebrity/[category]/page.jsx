@@ -2,12 +2,14 @@ import { ServerApiHandler } from "~/helper/ServerApiHandler";
 import { Pagination } from "@/components/custom";
 import CelebrityCard from "../components/CelebrityCard";
 
-export default async function CelebrityCategory({ params }) {
+export default async function CelebrityCategory({ params, searchParams }) {
   const { category } = params;
   let data;
 
   try {
-    const res = await ServerApiHandler(`/api/celebrity/${category}`);
+    const res = await ServerApiHandler(
+      `/api/celebrity/${category}?page=${searchParams.page || 1}`
+    );
     data = await res;
     var total_pages = data.total_pages;
     var current_page = data.page;
@@ -29,7 +31,12 @@ export default async function CelebrityCategory({ params }) {
           ))}
         </ul>
         <div className="flex items-center justify-center">
-          <Pagination currentPage={current_page} totalPage={total_pages} />
+          <Pagination
+            currentPage={current_page}
+            totalPage={total_pages}
+            query="page"
+            path={`/celebrity/${category}`}
+          />
         </div>
       </section>
     </section>

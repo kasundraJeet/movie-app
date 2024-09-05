@@ -77,6 +77,10 @@ body {
   @apply flex items-stretch;
 }
 
+.pagination .disabled{
+@apply cursor-not-allowed opacity-70 pointer-events-none
+}
+
 .pagination-list a{
   @apply min-w-7 min-h-7 max-h-7 max-w-max px-2 border-r-0;
 }
