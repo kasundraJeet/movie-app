@@ -7,37 +7,37 @@ const Footer = () => {
         <div className="container">
             <ul className="space-y-1">
               <li>
-                <Link href="/celebrity" className="underline">Celebrity</Link>
+                <Link href="/celebritys" className="underline">Celebritys</Link>
               </li>
               <li>
-                <Link href="/celebrity/male-celebrity" className="underline">Male Celebrity</Link>
+                <Link href="/celebritys/male-celebritys" className="underline">Male Celebritys</Link>
               </li>
               <li>
-                <Link href="/celebrity/female-celebrity" className="underline">Female Celebrity</Link>
+                <Link href="/celebritys/female-celebritys" className="underline">Female Celebritys</Link>
               </li>
               <li>
-                <Link href="/celebrity/indian-male-celebrity" className="underline">indian-male-celebrity</Link>
+                <Link href="/celebritys/indian-male-celebritys" className="underline">indian-male-celebritys</Link>
               </li>
               <li>
-                <Link href="/celebrity/indian-female-celebrity" className="underline">indian-female-celebrity</Link>
+                <Link href="/celebritys/indian-female-celebritys" className="underline">indian-female-celebritys</Link>
               </li>
               <li>
-                <Link href="/celebrity/month-birthday" className="underline">month-birthday</Link>
+                <Link href="/celebritys/month-birthday" className="underline">month-birthday</Link>
               </li>
               <li>
-                <Link href="/celebrity/today-birthday" className="underline">today-birthday</Link>
+                <Link href="/celebritys/today-birthday" className="underline">today-birthday</Link>
               </li>
               <li>
-                <Link href="/celebrity/young-celebrity" className="underline">young-celebrity</Link>
+                <Link href="/celebritys/young-celebritys" className="underline">young-celebritys</Link>
               </li>
               <li>
-                <Link href="/celebrity/oldest-celebrity" className="underline">oldest-celebrity</Link>
+                <Link href="/celebritys/oldest-celebritys" className="underline">oldest-celebritys</Link>
               </li>
               <li>
-                <Link href="/celebrity/bollywood-celebrity" className="underline">bollywood-celebrity</Link>
+                <Link href="/celebritys/bollywood-celebritys" className="underline">bollywood-celebritys</Link>
               </li>
               <li>
-                <Link href="/celebrity/hollywood-celebrity" className="underline">hollywood-celebrity</Link>
+                <Link href="/celebritys/hollywood-celebritys" className="underline">hollywood-celebritys</Link>
               </li>
             </ul>
         </div>
