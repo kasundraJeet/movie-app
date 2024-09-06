@@ -21,7 +21,6 @@ person data structure like this
   known_for: [Array];
 }
 
-
 app/
    api/
       celebrity/
