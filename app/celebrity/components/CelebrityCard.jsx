@@ -1,4 +1,5 @@
 import { Image } from "@/components/custom";
+import Link from "next/link";
 
 export default function CelebrityCard({ celebrity }) {
   return (
@@ -12,12 +13,12 @@ export default function CelebrityCard({ celebrity }) {
         />
       </div>
       <div className="content">
-        <h2>
+        <Link href={`/celebrity/details/${celebrity.id}`}>
           {celebrity.name}
           {celebrity.name.toLowerCase() !==
             celebrity.original_name.toLowerCase() &&
             ` (${celebrity.original_name})`}
-        </h2>
+        </Link>
         <p className="">
           {celebrity.known_for.map((known, index) => (
             <span key={known.id}>
