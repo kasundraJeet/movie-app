@@ -2,10 +2,16 @@ import { ServerApiHandler } from "~/helper/ServerApiHandler";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
+
 export default async function CelebrityCategory({ params }) {
   const { category } = params;
-  let data;
 
+
+  if (category !== "movie" && category !== "tv") {
+    return <p>Category not found.</p>;
+  }
+
+  let data;
   try {
     const res = await ServerApiHandler(`/api/certification/${category}`);
     data = await res;
@@ -25,3 +31,12 @@ export default async function CelebrityCategory({ params }) {
     </section>
   );
 }
+
+
+export async function generateStaticParams() {
+  return [
+    { category: "movie" },
+    { category: "tv" },
+  ];
+}
+

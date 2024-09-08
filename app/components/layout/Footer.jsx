@@ -90,6 +90,23 @@ const Footer = () => {
               </Link>
             </li>
           </ul>
+          <ul>
+            <li>
+              <Link href="/certification" className="underline">
+                Certification
+              </Link>
+            </li>
+            <li>
+              <Link href="/certification/movie" className="underline">
+                Certification Movie
+              </Link>
+            </li>
+            <li>
+              <Link href="/certification/tv" className="underline">
+                Certification Tv
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
       <div className="py-3">
