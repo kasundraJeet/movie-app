@@ -1,10 +1,10 @@
-import { openGraphImage , metaTags } from "~/lib/metadata";
+import { openGraph , metaTags } from "~/lib/metadata";
 
 export const metadata = {
     ...metaTags,
     title: 'Blog',
   openGraph: {
-    ...openGraphImage,
+    ...openGraph,
     title: "Home",
   },
 };

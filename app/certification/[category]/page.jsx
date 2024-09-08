@@ -1,11 +1,28 @@
 import { ServerApiHandler } from "~/helper/ServerApiHandler";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { metaTags , additionalMeta } from "~/lib/metadata";
+
+export async function generateStaticParams() {
+  return [
+    { category: "movie" },
+    { category: "film" },
+    { category: "tv" },
+    { category: "tv-show" },
+    { category: "television-show" },
+  ];
+}
+
+export async function generateMetadata({ params }) {
+  return {
+    ...additionalMeta,
+    ...metaTags,
+    title: `${params.category.charAt(0).toUpperCase() + params.category.slice(1)} Certification`,
+  };
+}
 
 export default async function CertificationCategory({ params }) {
   const { category } = params;
 
-  if (category !== "movie" && category !== "tv") {
+  if (category !== "movie" && category !== "tv" && category !== "film" && category !== "tv-show" && category !== "television-show") {
     return <p>Category not found.</p>;
   }
 
@@ -36,7 +53,10 @@ export default async function CertificationCategory({ params }) {
               <ul className="space-y-2 divide-y divide-vibrantCoral">
                 {data[key].map((item, i) => (
                   <li key={`${key}-${i}`} className="certification--box">
-                    <Box item={item} />
+                    <div className="certification--icon">
+                      {item.certification}
+                    </div>
+                    <p className="text-sm">{item.meaning || "-"}</p>
                   </li>
                 ))}
               </ul>
@@ -45,18 +65,5 @@ export default async function CertificationCategory({ params }) {
         </ul>
       </section>
     </section>
-  );
-}
-
-export async function generateStaticParams() {
-  return [{ category: "movie" }, { category: "tv" }];
-}
-
-function Box({ item }) {
-  return (
-    <>
-      <div className="certification--icon">{item.certification}</div>
-      <p className="text-sm">{item.meaning || "-"}</p>
-    </>
   );
 }
