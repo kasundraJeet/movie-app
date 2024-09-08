@@ -44,6 +44,15 @@ const Footer = () => {
               <li>
                 <Link href="/movies" className="underline">Movies</Link>
               </li>
+              <li>
+                <Link href="/movies/popular" className="underline">Popular Movies</Link>
+              </li>
+              <li>
+                <Link href="/movies/top-rated" className="underline">Top Rated Movies</Link>
+              </li>
+              <li>
+                <Link href="/movies/new-release" className="underline">New Release Movies</Link>
+              </li>
             </ul>
         </div>
       </div>

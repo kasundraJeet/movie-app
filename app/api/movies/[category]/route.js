@@ -15,17 +15,32 @@ export async function GET(req, { params }) {
   switch (category) {
     case "top-rated":
     case "top":
+    case "best-movies":
+    case "highly-rated":
+    case "all-time-favorites":
+    case "fan-favorites":
       url = `${API}/movie/top_rated?language=en-US&page=${page}`;
       data = await ApiRequest(url);
       break;
 
     case "up-coming":
+    case "up-coming-releases":
+    case "soon-in-theaters":
+    case "future-releases":
+    case "anticipated-releases":
+    case "coming-soon":
+    case "new-releases-upcoming":
       url = `${API}/movie/upcoming?language=en-US&page=${page}`;
       data = await ApiRequest(url);
       break;
 
     case "popular":
     case "famous":
+    case "trending-now":
+    case "most-popular":
+    case "blockbusters":
+    case "audience-favorites":
+    case "hit-movies":
       url = `${API}/movie/popular?language=en-US&page=${page}`;
       data = await ApiRequest(url);
       break;
@@ -33,6 +48,11 @@ export async function GET(req, { params }) {
     case "now-playing":
     case "latest":
     case "new-release":
+    case "currently-showing":
+    case "in-theaters-now":
+    case "latest-releases":
+    case "watch-now":
+    case "new-in-theaters":
       url = `${API}/movie/now_playing?language=en-US&page=${page}`;
       data = await ApiRequest(url);
       break;
