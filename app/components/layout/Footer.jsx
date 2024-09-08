@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="w-full footer">
       <div className="py-3.5">
-        <div className="container">
+        <div className="container flex gap-12">
             <ul className="space-y-1">
               <li>
                 <Link href="/celebrity" className="underline">Celebrity</Link>
@@ -38,6 +38,11 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="/celebrity/hollywood-celebrity" className="underline">hollywood-celebrity</Link>
+              </li>
+            </ul>
+            <ul className="space-y-1">
+              <li>
+                <Link href="/movies" className="underline">Movies</Link>
               </li>
             </ul>
         </div>

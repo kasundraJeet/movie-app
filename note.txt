@@ -113,3 +113,14 @@ next i have many data structure for routing how to manger
 || person infomation infomation
 || person Coutry, state , city
 
+
+
+
+
+
+** movie
+
+popular movies
+top 100 movies
+upcoming movies
+    / counrty
