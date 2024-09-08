@@ -11,7 +11,6 @@ export default async function CelebrityCategory({ params, searchParams }) {
       `/api/movies/${category}?page=${searchParams.page || 1}`
     );
     data = await res;
-
   } catch (error) {
     return <p>Failed to load celebrities. Please try again later.</p>;
   }
@@ -22,9 +21,9 @@ export default async function CelebrityCategory({ params, searchParams }) {
 
   return (
     <section className="container">
-    <SyntaxHighlighter language="json" style={atomDark}>
-      {JSON.stringify(data, null, 2)}
-    </SyntaxHighlighter>
-  </section>
+      <SyntaxHighlighter language="json" style={atomDark}>
+        {JSON.stringify(data, null, 2)}
+      </SyntaxHighlighter>
+    </section>
   );
 }

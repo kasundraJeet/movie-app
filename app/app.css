@@ -63,33 +63,49 @@ body {
 }
 
 .pagination .arrow-btn,
-.pagination-list button ,
+.pagination-list button,
 .pagination-list a {
   @apply min-w-7 min-h-7 max-w-7 max-h-7 border border-solid border-vibrantCoral flex items-center justify-center;
 }
 
 .pagination .arrow-btn:disabled,
-.pagination-list a:disabled{
-  @apply opacity-50 cursor-no-drop
+.pagination-list a:disabled {
+  @apply opacity-50 cursor-no-drop;
 }
 
 .pagination-list {
   @apply flex items-stretch;
 }
 
-.pagination .disabled{
-@apply cursor-not-allowed opacity-70 pointer-events-none
+.pagination .disabled {
+  @apply cursor-not-allowed opacity-70 pointer-events-none;
 }
 
-.pagination-list a{
+.pagination-list a {
   @apply min-w-7 min-h-7 max-h-7 max-w-max px-2 border-r-0;
 }
-.pagination-list li:nth-last-child(1) a{
-  @apply  border-r
+.pagination-list li:nth-last-child(1) a {
+  @apply border-r;
 }
 
 .pagination .arrow-btn:hover,
 .pagination-list a:hover,
-.pagination-list a.active{
-  @apply bg-peachBlush
+.pagination-list a.active {
+  @apply bg-peachBlush;
+}
+
+.movie--box {
+  @apply w-full border border-solid border-vibrantCoral;
+}
+
+.movie--box .image-wrapper {
+  @apply w-full relative pt-[420px];
+}
+
+.movie--box .image-wrapper image {
+  @apply border-none object-cover;
+}
+
+.movie--box .content{
+  @apply p-4
 }
