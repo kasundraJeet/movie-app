@@ -106,6 +106,26 @@ body {
   @apply border-none object-cover;
 }
 
-.movie--box .content{
-  @apply p-4
+.movie--box .content {
+  @apply p-4;
+}
+
+.certification--box {
+  @apply w-full flex items-center p-4 gap-6;
+}
+
+.certification--box p {
+  @apply text-base;
+}
+
+.certification--box:hover {
+  @apply bg-vibrantCoral;
+}
+
+.certification--icon {
+  @apply border border-solid  transition border-vibrantCoral rounded-full min-w-12 min-h-12 max-w-12 max-h-12 flex items-center justify-center line-clamp-1 overflow-hidden text-center text-sm;
+}
+
+.certification--box:hover .certification--icon {
+  @apply bg-deepSpace;
 }
