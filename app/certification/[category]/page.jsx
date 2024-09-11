@@ -1,5 +1,6 @@
 import { ServerApiHandler } from "~/helper/ServerApiHandler";
-import { metaTags , additionalMeta } from "~/lib/metadata";
+import { metaTags, additionalMeta } from "~/lib/metadata";
+let schema;
 
 export async function generateStaticParams() {
   return [
@@ -12,17 +13,49 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
+  let data;
+  try {
+    const res = await ServerApiHandler(`/api/certification/${params.category}`);
+    data = await res;
+
+    schema = {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      itemListElement: Object.keys(data).flatMap((key) =>
+        data[key].map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "Thing",
+            name: item.certification,
+            description: item.meaning,
+          },
+        }))
+      ),
+    };
+  } catch (error) {
+    throw error;
+  }
+
   return {
     ...additionalMeta,
     ...metaTags,
-    title: `${params.category.charAt(0).toUpperCase() + params.category.slice(1)} Certification`,
+    title: `${
+      params.category.charAt(0).toUpperCase() + params.category.slice(1)
+    } Certification`,
   };
 }
 
 export default async function CertificationCategory({ params }) {
   const { category } = params;
 
-  if (category !== "movie" && category !== "tv" && category !== "film" && category !== "tv-show" && category !== "television-show") {
+  if (
+    category !== "movie" &&
+    category !== "tv" &&
+    category !== "film" &&
+    category !== "tv-show" &&
+    category !== "television-show"
+  ) {
     return <p>Category not found.</p>;
   }
 
@@ -40,6 +73,10 @@ export default async function CertificationCategory({ params }) {
 
   return (
     <section className="space-y-12 py-4">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <h1 className="text-[5vw] text-center uppercase">
         {category} Certification
       </h1>
