@@ -2,8 +2,9 @@ import { ApiRequest } from "~/helper/ApiRequest";
 
 const API = process.env.API_DOMAIN;
 
-export async function GET(req, { params }) {
+export async function GET(req, { params, searchParams }) {
   const { id, info } = params;
+  const page = searchParams?.page || 1; // Default to page 1 if no page parameter is passed
 
   let data;
   let url;
@@ -20,7 +21,7 @@ export async function GET(req, { params }) {
     case "reviews":
     case "comments":
     case "feedback":
-      url = `${API}/movie/${id}/reviews?language=en-US`;
+      url = `${API}/movie/${id}/reviews?language=en-US&page=${page}`;
       data = await ApiRequest(url);
       break;
 
@@ -47,14 +48,14 @@ export async function GET(req, { params }) {
     case "similar":
     case "related":
     case "related-movies":
-      url = `${API}/movie/${id}/similar?language=en-US`;
+      url = `${API}/movie/${id}/similar?language=en-US&page=${page}`;
       data = await ApiRequest(url);
       break;
 
     case "recommendations":
     case "suggestions":
     case "recommended-movies":
-      url = `${API}/movie/${id}/recommendations?language=en-US`;
+      url = `${API}/movie/${id}/recommendations?language=en-US&page=${page}`;
       data = await ApiRequest(url);
       break;
 
