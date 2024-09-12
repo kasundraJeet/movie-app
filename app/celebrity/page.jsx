@@ -2,6 +2,7 @@ import { ServerApiHandler } from "~/helper/ServerApiHandler";
 import { Pagination } from "@/components/custom";
 import CelebrityCard from "./components/CelebrityCard";
 
+
 export default async function Celebrity({ searchParams }) {
   const page = searchParams.page || 1;
   let data;

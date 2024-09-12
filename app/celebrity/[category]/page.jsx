@@ -2,6 +2,22 @@ import { ServerApiHandler } from "~/helper/ServerApiHandler";
 import { Pagination } from "@/components/custom";
 import CelebrityCard from "../components/CelebrityCard";
 
+export async function generateStaticParams() {
+  return [
+    { category: "female-celebrity" },
+    { category: "male-celebrity" },
+    { category: "indian-male-celebrity" },
+    { category: "indian-female-celebrity" },
+    { category: "month-birthday" },
+    { category: "today-birthday" },
+    { category: "young-celebrity" },
+    { category: "oldest-celebrity" },
+    { category: "bollywood-celebrity" },
+    { category: "hollywood-celebrity" },
+  ];
+}
+
+
 export default async function CelebrityCategory({ params, searchParams }) {
   const { category } = params;
   let data;
