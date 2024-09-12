@@ -3,14 +3,13 @@ import { Pagination } from "@/components/custom";
 import CelebrityCard from "./components/CelebrityCard";
 
 export default async function Celebrity({ searchParams }) {
+  const page = searchParams.page || 1;
   let data;
   let current_page;
   let total_pages;
 
   try {
-    const res = await ServerApiHandler(
-      `/api/celebrity?page=${searchParams.page || 1}`
-    );
+    const res = await ServerApiHandler(`/api/celebrity?page=${page}`);
     data = await res;
     total_pages = data.total_pages;
     current_page = data.page;
@@ -32,7 +31,12 @@ export default async function Celebrity({ searchParams }) {
           ))}
         </ul>
         <div className="flex items-center justify-center">
-          <Pagination currentPage={current_page} totalPage={total_pages} query="page" path="/celebrity" />
+          <Pagination
+            currentPage={current_page}
+            totalPage={total_pages}
+            query="page"
+            path="/celebrity"
+          />
         </div>
       </section>
     </section>
