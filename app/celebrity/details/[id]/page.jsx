@@ -1,35 +1,23 @@
 import { ServerApiHandler } from "~/helper/ServerApiHandler";
+import { generateApiRequest } from "~/helper/generateApiRequest";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-const API = process.env.API_DOMAIN;
+const PAGE_LIMIT = process.env.PAGE_LIMIT;
 
 export async function generateStaticParams() {
-  const API_KEY = process.env.API_TOKEN;
+  let celebrities = [];
 
-  const headers = {
-    accept: "application/json",
-    Authorization: `Bearer ${API_KEY}`,
-  };
-
-  try {
-    const response = await fetch(`${API}/person/popular?page=1`, { headers });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    const celebrities = data.results || [];
-
-    return celebrities.map((celebrity) => ({
-      id: celebrity.id.toString(),
-    }));
-  } catch (error) {
-    console.error("Error fetching celebrities:", error);
-    return [];
+  for (let page = 1; page <= PAGE_LIMIT; page++) {
+      const response = await generateApiRequest(`/person/popular?page=${page}`);
+      celebrities = celebrities.concat(response.results || []);
   }
+
+  return celebrities.map((celebrity) => ({
+      id: celebrity.id.toString(),
+  }));
 }
+
 
 export default async function CelebrityDetail({ params }) {
   const { id } = params;
