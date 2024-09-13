@@ -1,17 +1,38 @@
 import { ServerApiHandler } from "~/helper/ServerApiHandler";
+import { generateApiRequest } from "~/helper/generateApiRequest";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 
+export async function generateStaticParams() {
+  let celebrities = [];
+  const categories = ['movies', 'tv-show', 'images'];
+
+  for (let page = 1; page <= 100; page++) {
+    const response = await generateApiRequest(`/person/popular?page=${page}`);
+    celebrities = celebrities.concat(response.results || []);
+  }
+
+
+  const params = celebrities.flatMap((celebrity) =>
+    categories.map((category) => ({
+      id: celebrity.id.toString(),
+      category,
+    }))
+  );
+
+  return params;
+}
+
 export default async function CelebrityDetail({ params }) {
-  const { id , category } = params;
+  const { id, category } = params;
   let data;
 
   try {
     const res = await ServerApiHandler(`/api/celebrity/details/${id}/${category}`);
     data = await res;
   } catch (error) {
-    return <p>Failed to load celebrities. Please try again later.</p>;
+    return <p>Failed to load celebrity details. Please try again later.</p>;
   }
 
   if (!data) {
@@ -20,9 +41,9 @@ export default async function CelebrityDetail({ params }) {
 
   return (
     <section className="container">
-    <SyntaxHighlighter language="json" style={atomDark}>
-      {JSON.stringify(data, null, 2)}
-    </SyntaxHighlighter>
+      <SyntaxHighlighter language="json" style={atomDark}>
+        {JSON.stringify(data, null, 2)}
+      </SyntaxHighlighter>
     </section>
   );
 }

@@ -1,5 +1,3 @@
-export default function CelebrityHome(){
-    return(
-        <h1> this is home </h1>
-    )
+export default function CelebrityHome() {
+  return <h1> this is home </h1>;
 }

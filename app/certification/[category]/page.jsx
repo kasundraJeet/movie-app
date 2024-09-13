@@ -1,5 +1,5 @@
 import { ServerApiHandler } from "~/helper/ServerApiHandler";
-import { metaTags, additionalMeta } from "~/lib/metadata";
+// import { metaTags, additionalMeta } from "~/lib/metadata";
 let schema;
 
 export async function generateStaticParams() {

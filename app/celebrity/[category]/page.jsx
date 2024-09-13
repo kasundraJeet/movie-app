@@ -3,7 +3,7 @@ import { Pagination } from "@/components/custom";
 import CelebrityCard from "../components/CelebrityCard";
 
 export async function generateStaticParams() {
-  return [
+  const categories = [
     { category: "female-celebrity" },
     { category: "male-celebrity" },
     { category: "indian-male-celebrity" },
@@ -15,6 +15,8 @@ export async function generateStaticParams() {
     { category: "bollywood-celebrity" },
     { category: "hollywood-celebrity" },
   ];
+
+  return categories;
 }
 
 

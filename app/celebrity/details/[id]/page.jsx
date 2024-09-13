@@ -8,13 +8,13 @@ const PAGE_LIMIT = process.env.PAGE_LIMIT;
 export async function generateStaticParams() {
   let celebrities = [];
 
-  for (let page = 1; page <= PAGE_LIMIT; page++) {
-      const response = await generateApiRequest(`/person/popular?page=${page}`);
-      celebrities = celebrities.concat(response.results || []);
+  for (let page = 1; page <= 100; page++) {
+    const response = await generateApiRequest(`/person/popular?page=${page}`);
+    celebrities = celebrities.concat(response.results || []);
   }
 
   return celebrities.map((celebrity) => ({
-      id: celebrity.id.toString(),
+    id: celebrity.id.toString(),
   }));
 }
 
