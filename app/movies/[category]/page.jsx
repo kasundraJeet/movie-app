@@ -2,6 +2,42 @@ import { ServerApiHandler } from "~/helper/ServerApiHandler";
 import { Pagination } from "@/components/custom";
 import MovieBox from "../components/MovieBox";
 
+export async function generateStaticParams() {
+  const categories = [
+    { category: "top-rated" },
+    { category: "top" },
+    { category: "best-movies" },
+    { category: "highly-rated" },
+    { category: "all-time-favorites" },
+    { category: "fan-favorites" },
+    { category: "up-coming" },
+    { category: "up-coming-releases" },
+    { category: "soon-in-theaters" },
+    { category: "future-releases" },
+    { category: "anticipated-releases" },
+    { category: "coming-soon" },
+    { category: "new-releases-upcoming" },
+    { category: "popular" },
+    { category: "famous" },
+    { category: "trending-now" },
+    { category: "most-popular" },
+    { category: "blockbusters" },
+    { category: "audience-favorites" },
+    { category: "hit-movies" },
+    { category: "now-playing" },
+    { category: "latest" },
+    { category: "new-release" },
+    { category: "currently-showing" },
+    { category: "in-theaters-now" },
+    { category: "latest-releases" },
+    { category: "watch-now" },
+    { category: "new-in-theaters" }
+  ];
+
+  return categories;
+}
+
+
 export default async function CelebrityCategory({ params, searchParams }) {
   const { category } = params;
   let data;

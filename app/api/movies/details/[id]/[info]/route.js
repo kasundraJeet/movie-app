@@ -4,7 +4,7 @@ const API = process.env.API_DOMAIN;
 
 export async function GET(req, { params, searchParams }) {
   const { id, info } = params;
-  const page = searchParams?.page || 1; // Default to page 1 if no page parameter is passed
+  const page = searchParams?.page || 1;
 
   let data;
   let url;

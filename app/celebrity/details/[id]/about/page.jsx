@@ -1,6 +1,21 @@
 import { ServerApiHandler } from "~/helper/ServerApiHandler";
+import { generateApiRequest } from "~/helper/generateApiRequest";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+export async function generateStaticParams() {
+  let celebrities = [];
+
+  for (let page = 1; page <= 100; page++) {
+    const response = await generateApiRequest(`/person/popular?page=${page}`);
+    celebrities = celebrities.concat(response.results || []);
+  }
+
+  return celebrities.map((celebrity) => ({
+    id: celebrity.id.toString(),
+  }));
+}
+
 
 export default async function CelebrityDetail({ params }) {
   const { id } = params;
