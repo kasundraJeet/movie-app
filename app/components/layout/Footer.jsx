@@ -97,18 +97,13 @@ const Footer = () => {
               </Link>
             </li>
             <li>
-              <Link href="/movies/popular" className="underline">
+              <Link href="/tv-show/popular" className="underline">
                 Popular Movies
               </Link>
             </li>
             <li>
-              <Link href="/movies/top-rated" className="underline">
+              <Link href="/tv-show/top-rated" className="underline">
                 Top Rated Movies
-              </Link>
-            </li>
-            <li>
-              <Link href="/movies/new-release" className="underline">
-                New Release Movies
               </Link>
             </li>
           </ul>
@@ -126,6 +121,28 @@ const Footer = () => {
             <li>
               <Link href="/certification/tv" className="underline">
                 Certification Tv
+              </Link>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Link href="/certification" className="underline">
+                Trending
+              </Link>
+            </li>
+            <li>
+              <Link href="/trending/movies" className="underline">
+                Trending Movie
+              </Link>
+            </li>
+            <li>
+              <Link href="/trending/celebrity" className="underline">
+                Trending Celebrity
+              </Link>
+            </li>
+            <li>
+              <Link href="/trending/tv-show" className="underline">
+                Trending Tv
               </Link>
             </li>
           </ul>
