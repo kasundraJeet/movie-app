@@ -90,6 +90,28 @@ const Footer = () => {
               </Link>
             </li>
           </ul>
+          <ul className="space-y-1">
+            <li>
+              <Link href="/tv-show" className="underline">
+                Tv show
+              </Link>
+            </li>
+            <li>
+              <Link href="/movies/popular" className="underline">
+                Popular Movies
+              </Link>
+            </li>
+            <li>
+              <Link href="/movies/top-rated" className="underline">
+                Top Rated Movies
+              </Link>
+            </li>
+            <li>
+              <Link href="/movies/new-release" className="underline">
+                New Release Movies
+              </Link>
+            </li>
+          </ul>
           <ul>
             <li>
               <Link href="/certification" className="underline">
