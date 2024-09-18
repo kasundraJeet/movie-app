@@ -129,3 +129,15 @@ body {
 .certification--box:hover .certification--icon {
   @apply bg-deepSpace;
 }
+
+.footer-list-title {
+  @apply uppercase text-xl  tracking-wider font-bold opacity-70;
+}
+
+.footer-link{
+  @apply underline
+}
+
+.footer-social-icon{
+  @apply border border-solid  border-transparent rounded-full block
+}

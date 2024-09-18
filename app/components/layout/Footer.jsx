@@ -1,149 +1,157 @@
 import Link from "next/link";
+import Image from "next/image"
+
+
+const footerLinks = [
+  {
+    celebrity: {
+      title: "Celebrity",
+      links: [
+        { link: "/celebrity", title: "Celebrity" },
+        { link: "/celebrity/male-celebrity", title: "Male Celebrity" },
+        { link: "/celebrity/female-celebrity", title: "Female Celebrity" },
+        {
+          link: "/celebrity/indian-male-celebrity",
+          title: "Indian Male Celebrity",
+        },
+        {
+          link: "/celebrity/indian-female-celebrity",
+          title: "Indian Female Celebrity",
+        },
+        { link: "/celebrity/month-birthday", title: "Month Birthday" },
+        { link: "/celebrity/today-birthday", title: "Today Birthday" },
+        { link: "/celebrity/young-celebrity", title: "Young Celebrity" },
+        { link: "/celebrity/oldest-celebrity", title: "Oldest Celebrity" },
+        {
+          link: "/celebrity/bollywood-celebrity",
+          title: "Bollywood Celebrity",
+        },
+        {
+          link: "/celebrity/hollywood-celebrity",
+          title: "Hollywood Celebrity",
+        },
+      ],
+    },
+    movies: {
+      title: "Movies",
+      links: [
+        { link: "/movies", title: "Movies" },
+        { link: "/movies/popular", title: "Popular Movies" },
+        { link: "/movies/top-rated", title: "Top Rated Movies" },
+        { link: "/movies/new-release", title: "New Release Movies" },
+      ],
+    },
+    tv_show: {
+      title: "TV Show",
+      links: [
+        { link: "/tv-show", title: "TV Show" },
+        { link: "/tv-show/popular", title: "Popular TV Shows" },
+        { link: "/tv-show/top-rated", title: "Top Rated TV Shows" },
+      ],
+    },
+    certification: {
+      title: "Certification",
+      links: [
+        { link: "/certification", title: "Certification" },
+        { link: "/certification/movie", title: "Certification Movie" },
+        { link: "/certification/tv", title: "Certification TV" },
+      ],
+    },
+    trending: {
+      title: "Trending",
+      links: [
+        { link: "/trending/movies", title: "Trending Movies" },
+        { link: "/trending/celebrity", title: "Trending Celebrity" },
+        { link: "/trending/tv-show", title: "Trending TV Shows" },
+      ],
+    },
+  },
+];
 
 const Footer = () => {
   return (
     <footer className="w-full footer">
       <div className="py-3.5">
-        <div className="container flex gap-12">
-          <ul className="space-y-1">
-            <li>
-              <Link href="/celebrity" className="underline">
-                Celebrity
-              </Link>
+        <div className="container">
+          <ul className="w-full grid grid-cols-4 gap-12">
+            <li className="w-full space-y-3">
+              <div className="space-y-1">
+                <h3>JEETxTMDB</h3>
+                <p className="text-sm">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Assumenda esse natus quae tempore temporibus. Temporibus
+                  exercitationem recusandae natus?
+                </p>
+              </div>
+              <ul>
+                <li>
+                  <Link href="/" className="footer-social-icon">
+                    <Image src="/assets/logos/github_logo.png" alt="github logo" width={90} height={52} />
+                  </Link>
+                </li>
+              </ul>
             </li>
-            <li>
-              <Link href="/celebrity/male-celebrity" className="underline">
-                Male Celebrity
-              </Link>
-            </li>
-            <li>
-              <Link href="/celebrity/female-celebrity" className="underline">
-                Female Celebrity
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/celebrity/indian-male-celebrity"
-                className="underline"
-              >
-                indian-male-celebrity
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/celebrity/indian-female-celebrity"
-                className="underline"
-              >
-                indian-female-celebrity
-              </Link>
-            </li>
-            <li>
-              <Link href="/celebrity/month-birthday" className="underline">
-                month-birthday
-              </Link>
-            </li>
-            <li>
-              <Link href="/celebrity/today-birthday" className="underline">
-                today-birthday
-              </Link>
-            </li>
-            <li>
-              <Link href="/celebrity/young-celebrity" className="underline">
-                young-celebrity
-              </Link>
-            </li>
-            <li>
-              <Link href="/celebrity/oldest-celebrity" className="underline">
-                oldest-celebrity
-              </Link>
-            </li>
-            <li>
-              <Link href="/celebrity/bollywood-celebrity" className="underline">
-                bollywood-celebrity
-              </Link>
-            </li>
-            <li>
-              <Link href="/celebrity/hollywood-celebrity" className="underline">
-                hollywood-celebrity
-              </Link>
-            </li>
-          </ul>
-          <ul className="space-y-1">
-            <li>
-              <Link href="/movies" className="underline">
-                Movies
-              </Link>
-            </li>
-            <li>
-              <Link href="/movies/popular" className="underline">
-                Popular Movies
-              </Link>
-            </li>
-            <li>
-              <Link href="/movies/top-rated" className="underline">
-                Top Rated Movies
-              </Link>
-            </li>
-            <li>
-              <Link href="/movies/new-release" className="underline">
-                New Release Movies
-              </Link>
-            </li>
-          </ul>
-          <ul className="space-y-1">
-            <li>
-              <Link href="/tv-show" className="underline">
-                Tv show
-              </Link>
-            </li>
-            <li>
-              <Link href="/tv-show/popular" className="underline">
-                Popular Movies
-              </Link>
-            </li>
-            <li>
-              <Link href="/tv-show/top-rated" className="underline">
-                Top Rated Movies
-              </Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link href="/certification" className="underline">
-                Certification
-              </Link>
-            </li>
-            <li>
-              <Link href="/certification/movie" className="underline">
-                Certification Movie
-              </Link>
-            </li>
-            <li>
-              <Link href="/certification/tv" className="underline">
-                Certification Tv
-              </Link>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link href="/certification" className="underline">
-                Trending
-              </Link>
-            </li>
-            <li>
-              <Link href="/trending/movies" className="underline">
-                Trending Movie
-              </Link>
-            </li>
-            <li>
-              <Link href="/trending/celebrity" className="underline">
-                Trending Celebrity
-              </Link>
-            </li>
-            <li>
-              <Link href="/trending/tv-show" className="underline">
-                Trending Tv
-              </Link>
+            <li className="col-span-3">
+              <ul className="grid grid-cols-4">
+                <li>
+                  <div className="space-y-1.5">
+                    <ListTitle title={footerLinks[0].movies.title} />
+                    <ul className="space-y-0.5">
+                      {footerLinks[0].movies.links.map((item, index) => (
+                        <li key={index}>
+                          <AchorLink href={item.link} title={item.title} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div className="space-y-1.5">
+                    <ListTitle title={footerLinks[0].celebrity.title} />
+                    <ul className="space-y-0.5">
+                      {footerLinks[0].celebrity.links.map((item, index) => (
+                        <li key={index}>
+                          <AchorLink href={item.link} title={item.title} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+                <li className="space-y-9">
+                  <div className="space-y-1.5">
+                    <ListTitle title={footerLinks[0].trending.title} />
+                    <ul className="space-y-0.5">
+                      {footerLinks[0].trending.links.map((item, index) => (
+                        <li key={index}>
+                          <AchorLink href={item.link} title={item.title} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="space-y-1.5">
+                    <ListTitle title={footerLinks[0].certification.title} />
+                    <ul className="space-y-0.5">
+                      {footerLinks[0].certification.links.map((item, index) => (
+                        <li key={index}>
+                          <AchorLink href={item.link} title={item.title} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div className="space-y-1.5">
+                    <ListTitle title={footerLinks[0].tv_show.title} />
+                    <ul className="space-y-0.5">
+                      {footerLinks[0].tv_show.links.map((item, index) => (
+                        <li key={index}>
+                          <AchorLink href={item.link} title={item.title} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -171,3 +179,15 @@ const Footer = () => {
   );
 };
 export default Footer;
+
+function AchorLink({ href, title }) {
+  return (
+    <Link href={href} className="footer-link">
+      {title}
+    </Link>
+  );
+}
+
+function ListTitle({ title }) {
+  return <h5 className="footer-list-title">{title}</h5>;
+}
