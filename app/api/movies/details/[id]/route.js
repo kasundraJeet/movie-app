@@ -4,7 +4,7 @@ const API = process.env.API_DOMAIN;
 
 export async function GET(req, { params }) {
   const { id } = params;
-  console.log(id)
+
   var data = await ApiRequest(`${API}/movie/${id}?language=en-US`);
   var images = await ApiRequest(`${API}/movie/${id}/images`);
   var credits  = await ApiRequest(
